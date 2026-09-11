@@ -216,7 +216,7 @@ jQuery(document).ready(function($) {
      * Preloader
      */
     if($('#preloader-background').length > 0) {
-        setTimeout(function(){$('#preloader-background').hide();}, 600);
+        $('#preloader-background').fadeOut(200);
     }
 
     /**
