@@ -1,0 +1,57 @@
+{%- import "nav-macro.njk" as navMacro -%}
+	<footer id="colophon" class="site-footer sub-footer-layout2" role="contentinfo">
+
+
+<div id="top-footer" class="footer-widgets-wrapper footer_column_three clearfix">
+		<div class="mt-container">
+
+				<div class="footer-widgets-area clearfix">
+						<div class="mt-footer-widget-wrapper mt-column-wrapper clearfix">
+							<div class="scholarship-footer-widget wow fadeInLeft" data-wow-duration="{% if isHome %}0.4s{% else %}0.5s{% endif %}">
+								<section id="text-1" class="widget widget_text">			<div class="textwidget"><p><a href="/media/2019/10/LC-MALAGA-horizontal-cabecera-2.png"><img loading="lazy" decoding="async" class="size-full wp-image-2501 alignnone" src="/media/2019/10/LC-MALAGA-horizontal-cabecera-2.png" alt="" width="300" height="86"></a></p>
+<p>I.A.E.S.T.E. (<strong>International Association for the Exchange of Students for Technical Experience</strong>) es una organización no gubernamental, independiente, apolítica y sin ánimo de lucro creada en 1948 y que actualmente se encuentra en <strong>más de 87 países de todo el mundo</strong>.</p>
+</div>
+		</section>							</div>
+
+																		<div class="scholarship-footer-widget wow fadeInLeft" data-wow-duration="{% if isHome %}0.6s{% else %}1.5s{% endif %}">
+											<section id="linkcat-6" class="widget widget_links"><h4 class="widget-title">Enlaces de interés</h4>
+	<ul class="xoxo blogroll">
+<li><a href="http://iaeste.es/" target="_blank">IAESTE España</a></li>
+<li><a href="http://iaeste.org/" target="_blank">IAESTE Internacional</a></li>
+
+	</ul>
+</section>
+<section id="custom_html-4" class="widget_text widget widget_custom_html"><h4 class="widget-title">Documentos legales</h4><div class="textwidget custom-html-widget"><a href="/legal/aviso-legal/">Aviso legal</a>
+
+<br> <a href="/estudiantes/bases-legales/">Bases legales</a>
+
+<br> <a href="/legal/politica-privacidad/">Política de privacidad</a>
+
+<br> <a href="/legal/politica-de-cookies/">Política de cookies</a></div></section>										</div>
+														</div><!-- .mt-footer-widget-wrapper -->
+				</div><!-- .footer-widgets-area -->
+
+		</div><!-- .mt-container -->
+</div><!-- .footer-widgets-wrapper -->
+		<div class="site-info-wrapper">
+			<div class="site-info">
+				<div class="mt-container">
+
+					<div class="scholarship-copyright-wrapper">
+												<span class="scholarship-copyright">IAESTE LC Málaga 2021 © | Todos los derechos reservados |  </span>
+					</div>
+
+					<div class="mt-sub-footer-right">
+						<a class="privacy-policy-link" href="/legal/politica-privacidad/" rel="privacy-policy">Política privacidad</a>				           	<nav id="site-footer-navigation" class="footer-navigation" role="navigation">
+						        <div class="menu-footer-menu-container"><ul id="footer-menu" class="menu">
+{%- for node in nav.footer -%}
+{{ navMacro.navItem(node, page.url, menuOnlyAncestor) }}
+{% endfor -%}
+</ul></div>				           	</nav><!-- #site-navigation -->
+			           				        </div><!-- .mt-sub-footer-right -->
+
+				</div>
+			</div><!-- .site-info -->
+		</div><!-- .site-info-wrapper -->
+
+	</footer><!-- #colophon -->

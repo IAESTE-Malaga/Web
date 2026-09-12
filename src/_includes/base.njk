@@ -1,0 +1,28 @@
+{% include "head.njk" %}
+<body class="{{ bodyClass }}">
+
+	        <div id="preloader-background">
+            <div class="preloader-wrapper">
+                                    <div class="multiple1">
+                        <div class="ball1"></div>
+                        <div class="ball2"></div>
+                        <div class="ball3"></div>
+                    </div>
+                            </div>
+        </div><!-- #preloader-background -->
+
+<div id="page" class="site">
+
+{% include "header.njk" %}
+	<div id="content" class="site-content">
+
+{{ content | safe }}
+	</div><!-- #content -->
+
+{% include "footer.njk" %}
+	<div id="mt-scrollup" class="animated arrow-hide"><i class="fa fa-chevron-up"></i></div>
+</div><!-- #page -->
+
+{% include "scripts.njk" %}
+</body>
+</html>

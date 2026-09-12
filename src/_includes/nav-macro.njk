@@ -1,0 +1,56 @@
+{#-
+  Reconstructs WordPress's nav-item class algorithm, reverse-engineered and
+  verified against the pre-migration source (see tools/migrate.mjs comment):
+  base type/object classes, then (if this node is an ancestor of the current
+  page) ancestor-state classes, then (if this node IS the current page)
+  current-menu-item [+ page_item + page-item-N] + current_page_item, then a
+  marker class (menu-item-has-children, or menu-item-home for "Inicio"),
+  then the menu-item-N id class.
+
+  The ancestor classes are actually two independent pairs: current-menu-
+  ancestor/current-menu-parent (from the menu structure, always present)
+  and current-page-ancestor/current-page-parent (from the page's real
+  "Parent" attribute in wp-admin, only present when it matches the menu
+  placement -- see migrate.mjs's `menuOnlyAncestor` detection).
+-#}
+{% macro navItem(node, currentUrl, menuOnlyAncestor) %}
+{%- set isCurrent = (node.url == currentUrl) -%}
+{#- A page nested more deeply than any registered menu entry (e.g. an
+    "Experiencias" gallery post under /estudiantes/experiencias/SLUG/) is
+    NOT a menu descendant just because its URL happens to share a prefix --
+    WordPress only marks a parent as ancestor when the current page is
+    exactly one of its direct children's own registered URLs. -#}
+{%- set isAncestor = (not isCurrent) and node.hasChildren and (node.typeClass != "menu-item-type-custom") and (node.children | hasChildWithUrl(currentUrl)) -%}
+{%- set classes = ["menu-item", node.typeClass, node.objectClass] -%}
+{%- if isAncestor -%}
+{%- if not menuOnlyAncestor -%}
+{%- set classes = classes.concat(["current-page-ancestor"]) -%}
+{%- endif -%}
+{%- set classes = classes.concat(["current-menu-ancestor","current-menu-parent"]) -%}
+{%- if not menuOnlyAncestor -%}
+{%- set classes = classes.concat(["current-page-parent"]) -%}
+{%- endif -%}
+{%- set classes = classes.concat(["current_page_parent","current_page_ancestor"]) -%}
+{%- endif -%}
+{%- if isCurrent -%}
+{%- set classes = classes.concat(["current-menu-item"]) -%}
+{%- if node.pageItemId -%}
+{%- set classes = classes.concat(["page_item", "page-item-" + node.pageItemId]) -%}
+{%- endif -%}
+{%- set classes = classes.concat(["current_page_item"]) -%}
+{%- endif -%}
+{%- if node.hasChildren -%}
+{%- set classes = classes.concat(["menu-item-has-children"]) -%}
+{%- elif node.isHomeMarker -%}
+{%- set classes = classes.concat(["menu-item-home"]) -%}
+{%- endif -%}
+{%- set classes = classes.concat([node.id]) -%}
+<li id="{{ node.id }}" class="{{ classes | join(' ') }}"><a href="{{ node.url }}"{% if isCurrent %} aria-current="page"{% endif %}>{{ node.label }}</a>
+{%- if node.hasChildren %}
+<ul class="sub-menu">
+{% for child in node.children -%}
+	{{ navItem(child, currentUrl, menuOnlyAncestor) }}
+{% endfor -%}
+</ul>
+{% endif %}</li>
+{%- endmacro %}

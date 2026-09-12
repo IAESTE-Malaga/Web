@@ -1,0 +1,89 @@
+[
+  {
+    "tag": "html",
+    "attrs": {},
+    "children": [
+      {
+        "tag": "head",
+        "attrs": {},
+        "children": [
+          {
+            "t": " "
+          },
+          {
+            "tag": "title",
+            "attrs": {},
+            "children": [
+              {
+                "t": "Redirigiendo..."
+              }
+            ]
+          },
+          {
+            "t": " "
+          },
+          {
+            "tag": "meta",
+            "attrs": {
+              "content": "../../../../0;url=../../wp-content/uploads/2019/10/maria_2018_australia_3.jpg",
+              "http-equiv": "refresh"
+            },
+            "children": []
+          },
+          {
+            "t": " "
+          }
+        ]
+      },
+      {
+        "t": " "
+      },
+      {
+        "tag": "body",
+        "attrs": {},
+        "children": [
+          {
+            "t": " "
+          },
+          {
+            "tag": "script",
+            "attrs": {
+              "type": "text/javascript"
+            },
+            "children": [
+              {
+                "t": "\n\t\t\t\t\twindow.location.assign(\"../../wp-content\\/uploads\\/2019\\/10\\/maria_2018_australia_3.jpg\");\n\t\t\t\t"
+              }
+            ]
+          },
+          {
+            "t": " "
+          },
+          {
+            "tag": "p",
+            "attrs": {},
+            "children": [
+              {
+                "t": "Estás siendo redirigido a "
+              },
+              {
+                "tag": "a",
+                "attrs": {
+                  "href": "/media/2019/10/maria_2018_australia_3.jpg"
+                },
+                "children": [
+                  {
+                    "t": "/wp-content/uploads/2019/10/maria_2018_australia_3.jpg"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "t": " "
+          }
+        ]
+      }
+    ]
+  }
+]

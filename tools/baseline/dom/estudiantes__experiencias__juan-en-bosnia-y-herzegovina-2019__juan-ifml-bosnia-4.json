@@ -1,0 +1,89 @@
+[
+  {
+    "tag": "html",
+    "attrs": {},
+    "children": [
+      {
+        "tag": "head",
+        "attrs": {},
+        "children": [
+          {
+            "t": " "
+          },
+          {
+            "tag": "title",
+            "attrs": {},
+            "children": [
+              {
+                "t": "Redirigiendo..."
+              }
+            ]
+          },
+          {
+            "t": " "
+          },
+          {
+            "tag": "meta",
+            "attrs": {
+              "content": "0;url=../../../../media/2019/10/JUAN-IFML-BOSNIA-4.png",
+              "http-equiv": "refresh"
+            },
+            "children": []
+          },
+          {
+            "t": " "
+          }
+        ]
+      },
+      {
+        "t": " "
+      },
+      {
+        "tag": "body",
+        "attrs": {},
+        "children": [
+          {
+            "t": " "
+          },
+          {
+            "tag": "script",
+            "attrs": {
+              "type": "text/javascript"
+            },
+            "children": [
+              {
+                "t": "\n\t\t\t\t\twindow.location.assign(\"../../../../media\\/2019\\/10\\/JUAN-IFML-BOSNIA-4.png\");\n\t\t\t\t"
+              }
+            ]
+          },
+          {
+            "t": " "
+          },
+          {
+            "tag": "p",
+            "attrs": {},
+            "children": [
+              {
+                "t": "Estás siendo redirigido a "
+              },
+              {
+                "tag": "a",
+                "attrs": {
+                  "href": "/media/2019/10/JUAN-IFML-BOSNIA-4.png"
+                },
+                "children": [
+                  {
+                    "t": "/wp-content/uploads/2019/10/JUAN-IFML-BOSNIA-4.png"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "t": " "
+          }
+        ]
+      }
+    ]
+  }
+]
