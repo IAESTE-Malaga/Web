@@ -23,12 +23,63 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 Reset
 --------------------------------------------------------------*/
 
-html, body, div, span, applet, object, iframe, 
-h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, 
-abbr, acronym, address, big, cite, code, del, dfn, em, font, 
-ins, kbd, q, s, samp, small, strike, strong, sub, sup, 
-tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, 
-table, caption, tbody, tfoot, thead, tr, th, td {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
     border: 0;
     font-family: inherit;
     font-size: 100%;
@@ -1411,7 +1462,7 @@ Header CSS
 
 #site-navigation li.menu-item-has-children>a:after,
 #site-navigation li.page_item_has_children>a:after,
-#site-navigation li.page_item_has_children>a:after{
+#site-navigation li.page_item_has_children>a:after {
     content: "\f107";
     font-family: FontAwesome;
     position: absolute;
@@ -1612,6 +1663,7 @@ Transparent Header CSS
 --------------------------------------------------------------*/
 
 @media (min-width: 1200px) {
+
     .home.header-layout3.header-transparent #masthead,
     .home.header-layout3.header-transparent #masthead-sticky-wrapper {
         position: absolute;
@@ -1694,6 +1746,7 @@ Transparent Header CSS
 }
 
 @media (max-width: 1200px) {
+
     .home.header-layout2.header-transparent #page #site-navigation ul li.current-menu-item>a,
     .home.header-layout2.header-transparent #page #site-navigation ul li:hover>a,
     .home.header-layout2.header-transparent #page #site-navigation ul li.current_page_ancestor>a,
@@ -2931,7 +2984,7 @@ Blog Section css
     width: 94%;
 }
 
-.no-thumbnail .archive-content-wrapper{
+.no-thumbnail .archive-content-wrapper {
     margin-top: 0;
 }
 
@@ -3311,6 +3364,18 @@ Footer css
     background: #f9f9f9 none repeat scroll 0 0;
 }
 
+.footer-about {
+    border-left: 3px solid #27a9e1;
+    line-height: 1.9;
+    margin: 15px 0 0;
+    max-width: 900px;
+    padding: 0 0 0 15px;
+}
+
+.footer-about strong {
+    color: #004b8e;
+}
+
 .footer_column_one .scholarship-footer-widget,
 .footer_column_two .scholarship-footer-widget,
 .footer_column_three .scholarship-footer-widget,
@@ -3330,6 +3395,40 @@ Footer css
 
 .footer_column_four .scholarship-footer-widget {
     width: 22%;
+}
+
+.footer_column_three .scholarship-footer-widget:nth-of-type(1) {
+    float: none;
+    margin: 0 0 4% 3%;
+    width: 97%;
+}
+
+.footer_column_three .scholarship-footer-widget:nth-of-type(1) .textwidget {
+    align-items: center;
+    display: flex;
+    gap: 40px;
+}
+
+.footer_column_three .scholarship-footer-widget:nth-of-type(1) .textwidget img {
+    margin-top: 15px;
+}
+
+.footer_column_three .scholarship-footer-widget:nth-of-type(1) .textwidget .footer-about {
+    flex: 1 1 auto;
+    margin: 0;
+    max-width: none;
+}
+
+.footer_column_three .scholarship-footer-widget:nth-of-type(2) {
+    display: flex;
+    float: none;
+    justify-content: space-around;
+    margin-left: 3%;
+    width: 97%;
+}
+
+.footer_column_three .scholarship-footer-widget:nth-of-type(2) section {
+    flex: 0 0 48%;
 }
 
 #top-footer {
@@ -3382,33 +3481,14 @@ Footer css
 }
 
 .scholarship-copyright-wrapper {
-    float: left;
+    float: none;
 }
 
-#site-footer-navigation {
-    float: right;
-    margin-right: 86px;
-}
-
-.sub-footer-layout1 #site-footer-navigation,
-.sub-footer-layout1 .mt-footer-social {
-    margin-right: 88px;
-}
-
-#site-footer-navigation ul {
-    list-style: outside none none;
-    margin: 0;
-}
-
-#site-footer-navigation ul.children,
-#site-footer-navigation ul.sub-menu {
-    display: none;
-}
-
-
-#site-footer-navigation ul li {
-    float: left;
-    padding: 0 10px;
+.site-info .mt-container {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 #mt-scrollup {
@@ -3417,6 +3497,7 @@ Footer css
     bottom: 40px;
     color: #fff;
     cursor: pointer;
+    display: none;
     height: 40px;
     line-height: 40px;
     position: fixed;
@@ -4190,4 +4271,3 @@ Woocommerce styles
     font-size: 16px;
     color: #004b8e;
 }
-

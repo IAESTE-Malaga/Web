@@ -6,9 +6,9 @@
  * Distributed under the MIT license - http://opensource.org/licenses/MIT
  */
 
-jQuery(document).ready(function($) {
+jQuery(document).ready(function ($) {
     "use strict";
-    
+
     /**
      * Homepage slider
      */
@@ -20,9 +20,9 @@ jQuery(document).ready(function($) {
     var slidePause = $('.scholarship-slider-wrapper').data('pause');
 
     $('.homepage-slider').lightSlider({
-        adaptiveHeight:true,
-        item:1,
-        slideMargin:0,
+        adaptiveHeight: true,
+        item: 1,
+        slideMargin: 0,
         pager: slidePager,
         controls: slideControl,
         loop: true,
@@ -32,7 +32,7 @@ jQuery(document).ready(function($) {
         pause: slidePause,
         enableTouch: false,
         enableDrag: false,
-        onSliderLoad: function() {
+        onSliderLoad: function () {
             $('.homepage-slider').removeClass('cS-hidden');
         }
     });
@@ -40,10 +40,10 @@ jQuery(document).ready(function($) {
     /**
      * Testimonials slider
      */
-    $('.testimonials-slider').each(function() {
+    $('.testimonials-slider').each(function () {
         var dataItem = $(this).data('item');
         $('.testimonialsSlider').lightSlider({
-            adaptiveHeight:true,
+            adaptiveHeight: true,
             item: dataItem,
             slideMargin: 30,
             loop: true,
@@ -53,33 +53,33 @@ jQuery(document).ready(function($) {
             auto: false,
             speed: 700,
             pause: 4200,
-            onSliderLoad: function() {
+            onSliderLoad: function () {
                 $('.testimonialsSlider').removeClass('cS-hidden');
             },
-            responsive : [
-                    {
-                        breakpoint:840,
-                        settings: {
-                            item:1,
-                            slideMove:1,
-                            slideMargin:6,
-                          }
-                    },
-                    {
-                        breakpoint:600,
-                        settings: {
-                            item:1,
-                            slideMove:1,
-                          }
+            responsive: [
+                {
+                    breakpoint: 840,
+                    settings: {
+                        item: 1,
+                        slideMove: 1,
+                        slideMargin: 6,
                     }
-                ]
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        item: 1,
+                        slideMove: 1,
+                    }
+                }
+            ]
         });
     });
 
     /**
      * sponsor carousel
      */
-    $('.sponsor-carousel').each(function() {
+    $('.sponsor-carousel').each(function () {
         $('.sponsorSlider').lightSlider({
             item: 5,
             pager: false,
@@ -87,31 +87,31 @@ jQuery(document).ready(function($) {
             loop: true,
             auto: true,
             slideMove: 1,
-            slideMargin:40,
+            slideMargin: 40,
             speed: 1000,
             pause: 4200,
             enableTouch: false,
             enableDrag: false,
             prevHtml: '<i class="fa fa-angle-left"></i>',
             nextHtml: '<i class="fa fa-angle-right"></i>',
-            onSliderLoad: function() {
+            onSliderLoad: function () {
                 $('.sponsorSlider').removeClass('cS-hidden');
             },
-            responsive : [
+            responsive: [
                 {
-                    breakpoint:800,
+                    breakpoint: 800,
                     settings: {
-                        item:3,
-                        slideMove:1,
-                        slideMargin:6,
-                      }
+                        item: 3,
+                        slideMove: 1,
+                        slideMargin: 6,
+                    }
                 },
                 {
-                    breakpoint:480,
+                    breakpoint: 480,
                     settings: {
-                        item:2,
-                        slideMove:1
-                      }
+                        item: 2,
+                        slideMove: 1
+                    }
                 }
             ]
         });
@@ -120,102 +120,102 @@ jQuery(document).ready(function($) {
     /**
      * team carousel
      */
-    $('.team-carousel').each(function() {
+    $('.team-carousel').each(function () {
         $('.teamSlider').lightSlider({
             item: 4,
             pager: true,
             controls: false,
-            auto:true,
+            auto: true,
             loop: true,
             slideMove: 1,
-            slideMargin:30,
+            slideMargin: 30,
             speed: 600,
             enableTouch: false,
             enableDrag: false,
-            onSliderLoad: function() {
+            onSliderLoad: function () {
                 $('.teamSlider').removeClass('cS-hidden');
             },
-            responsive : [
+            responsive: [
                 {
-                    breakpoint:800,
+                    breakpoint: 800,
                     settings: {
-                        item:3,
-                        slideMove:1,
-                        slideMargin:6,
-                      }
+                        item: 3,
+                        slideMove: 1,
+                        slideMargin: 6,
+                    }
                 },
                 {
-                    breakpoint:600,
+                    breakpoint: 600,
                     settings: {
-                        item:2,
-                        slideMove:1,
-                        slideMargin:6,
-                      }
+                        item: 2,
+                        slideMove: 1,
+                        slideMargin: 6,
+                    }
                 },
                 {
-                    breakpoint:480,
+                    breakpoint: 480,
                     settings: {
-                        item:1,
-                        slideMove:1
-                      }
+                        item: 1,
+                        slideMove: 1
+                    }
                 }
             ]
         });
     });
-    
+
     /**
      * Scroll To Top
      */
-    $(window).scroll(function() {
-        if ($(this).scrollTop() > 1000) { 
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 1000) {
             $('#mt-scrollup').fadeIn('slow');
         } else {
             $('#mt-scrollup').fadeOut('slow');
         }
     });
 
-    $('#mt-scrollup').click(function() {
+    $('#mt-scrollup').click(function () {
         $("html, body").animate({
             scrollTop: 0
         }, 600);
         return false;
     });
-    
+
     /**
      * toggle-menu
      */
-    $('.menu-toggle').click(function(event) {
+    $('.menu-toggle').click(function (event) {
         $('#primary-menu').slideToggle('slow');
     });
-    
+
     /**
      * responsive sub menu toggle
      */
     $('#site-navigation .menu-item-has-children').append('<span class="sub-toggle"> <i class="fa fa-angle-right"></i> </span>');
     $('#site-navigation .page_item_has_children').append('<span class="sub-toggle"> <i class="fa fa-angle-right"></i> </span>');
-    
 
-    $('#site-navigation .menu-item-has-children .sub-toggle').click(function() {
+
+    $('#site-navigation .menu-item-has-children .sub-toggle').click(function () {
         $(this).parent('.menu-item-has-children').children('ul.sub-menu').first().slideToggle('1000');
         $(this).children('.fa-angle-right').first().toggleClass('fa-angle-down');
     });
 
-    $('#site-navigation .page_item_has_children .sub-toggle').click(function() {
+    $('#site-navigation .page_item_has_children .sub-toggle').click(function () {
         $(this).parent('.page_item_has_children').children('ul.children').first().slideToggle('1000');
         $(this).children('.fa-angle-right').first().toggleClass('fa-angle-down');
     });
-    
+
     /**
      * home page search
      */
-    $('.header-search-wrapper .search-main').click(function() {
+    $('.header-search-wrapper .search-main').click(function () {
         $('.header-search-wrapper .search-form-main').toggleClass('search-activate');
     });
 
     /**
      * Preloader
      */
-    if($('#preloader-background').length > 0) {
+    if ($('#preloader-background').length > 0) {
         $('#preloader-background').fadeOut(200);
     }
 
@@ -223,7 +223,7 @@ jQuery(document).ready(function($) {
      * Settings about WOW animation
      */
     var WowOptionVal = WowOption.mode;
-    if( WowOption.mode == 'show' && $('body').hasClass('home') ) {
+    if (WowOption.mode == 'show' && $('body').hasClass('home')) {
         new WOW().init();
     }
 
@@ -241,21 +241,21 @@ jQuery(document).ready(function($) {
      */
     var mtPlayer;
     mtPlayer = $('.bg-video').YTPlayer({
-        containment:'#videoCta',
-        showControls:false, 
-        loop:true, 
-        mute:true, 
-        opacity:1, 
-        startAt:0,
-        quality:'default',
+        containment: '#videoCta',
+        showControls: false,
+        loop: true,
+        mute: true,
+        opacity: 1,
+        startAt: 0,
+        quality: 'default',
         showYTLogo: false
     });
 
     /**
      * Portfolio filter
      */
-    $('.portfolio-posts-wrapper').imagesLoaded( function() {
-        $('.portfolio-posts-wrapper').isotope({ 
+    $('.portfolio-posts-wrapper').imagesLoaded(function () {
+        $('.portfolio-posts-wrapper').isotope({
             filter: '*',
             itemSelector: '.isotope-item',
             layoutMode: 'fitRows',
@@ -264,23 +264,23 @@ jQuery(document).ready(function($) {
                 easing: 'liniar',
                 queue: false,
             }
-        }); 
+        });
 
-        $('.portfolio-filter a').click(function(e){
+        $('.portfolio-filter a').click(function (e) {
             e.preventDefault();
             var selector = $(this).attr('data-filter');
             $('.portfolio-filter li').removeClass('active');
-            $(this).parent().addClass('active');            
-            $('.portfolio-posts-wrapper').isotope({ 
+            $(this).parent().addClass('active');
+            $('.portfolio-posts-wrapper').isotope({
                 filter: selector,
                 layoutMode: 'fitRows',
                 animationOptions: {
                     duration: 750,
                     easing: 'liniar',
                     queue: false,
-                } 
-            }); 
-          return false; 
+                }
+            });
+            return false;
         });
     });
 
@@ -291,5 +291,5 @@ jQuery(document).ready(function($) {
         delay: 10,
         time: 1000
     });
-    
+
 });
